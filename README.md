@@ -25,8 +25,8 @@ These field names match the parameter keywords of my `Movie` constructor:
 def __init__(self, title, poster, trailer, storyline):
 ```
 
-By reading the file with a csv.DictReader, I am thus able to create
-new Movie objects ver succinctly, by reading them into an OrderedDict
+By reading the file with a `csv.DictReader`, I am thus able to create
+new `Movie` objects very succinctly, by simply reading them into an `OrderedDict`
 and unpacking it:
 
 ```
@@ -40,9 +40,10 @@ with open('favorite_movies.csv') as csvfile:
 
 The advantages of this approach:
 * The CSV file is self-documenting
-* I can lay out the fields in the CSV file in any order
-* I can pass each row to the constructor very succinctly, by unpacking it (**row)
-* An exception is thrown if csv fieldnames and Movie constructor keywords don't match
+* I can lay out the fields in the CSV file in any order I choose
+* CSV fieldnames and Movie constructor parameters are cross-checked: If they don't match, an exception is thrown
+* My code becomes very succint: read a row, unpack it, repeat
+
 
 
 
